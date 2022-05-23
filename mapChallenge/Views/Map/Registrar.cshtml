@@ -1,0 +1,88 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<center>
+    <h2>Novo local</h2><br />
+
+                       <form action="/mapa/criarlocal" method="post" class-in>
+                           <h3 style="color: black; font-weight: 300;"><u>Informações</u></h3>
+                           <div class="form-group">
+                               <label style="color: black;">Nome do local</label>
+                               <input type="text" class="form-control" id="txtNome" name="txtNome" placeholder="Ex: Minha Casa">
+                           </div><br />
+
+                           <h3 style="color: black; font-weight: 300;"><u>Endereço</u></h3>
+                           <div class="form-group">
+                               <label style="color: black;">Rua</label>
+                               <input type="text" class="form-control" id="txtRua" name="txtRua" placeholder="Ex: Rua Alberto Nogueira da Silva">
+                           </div>
+
+                           <div class="form-group">
+                               <label style="color: black;">Cidade</label>
+                               <input type="text" class="form-control" id="txtCidade" name="txtCidade" placeholder="Ex: Cajamar">
+                           </div>
+
+                           <div class="form-group">
+                               <label style="color: black;">Estado</label>
+                               <input type="text" class="form-control" id="txtEstado" name="txtEstado" placeholder="Ex: São Paulo">
+                           </div>
+
+                           <input onchange="addImg()" type="text" id="txtLatitude" name="txtLatitude" style="display:none;" />
+                           <input onchange="addImg()" type="text" id="txtLongitude" name="txtLongitude" style="display:none;" />
+
+                           <input type="button" class="btn-xs btn-primary" id="testa" name="testa" onclick="teste()" style="background-color: #90dfaa; font-size: 15px; color: white; border-color: #90dfaa;" value="Consultar endereço" /><br /><br />
+                           &nbsp;<img id="imgEncontrada" name="imgEncontrada" style="display:none; margin-top:-12px;" width="20px" /><br />
+
+
+                           <input type="submit" class="btn btn-primary" id="btnCadastro" name="btnCadastro" style="background-color: #90dfaa; font-size: 15px; color: white; font-size: 30px; border-color: #90dfaa;" disabled value="Cadastrar local" />
+                       </form>
+</center>
+
+<script>
+    function teste() {
+        var rua = document.getElementById('txtRua').value;
+        var cidade = document.getElementById('txtCidade').value;
+        var estado = document.getElementById('txtEstado').value;
+        var nome = document.getElementById('txtNome').value;
+
+        if (rua != "" && cidade != "" && estado != "" && nome != "") {
+            jQuery(function ($) {
+                var linkRequisicao = "https://nominatim.openstreetmap.org/search.php?street=" + rua + "&city=" + cidade + "&state=" + estado + "&format=jsonv2";
+                console.log(linkRequisicao);
+
+                $.get(linkRequisicao, function (resultado) {
+                    if (resultado.length >= 1) {
+                        validaSeAchou = true;
+                        console.log(resultado.length);
+                        if (resultado.length == 0) {
+                        }
+                        else {
+                            document.getElementById('txtLatitude').value = resultado[0].lat;
+                            document.getElementById('txtLongitude').value = resultado[0].lon;
+                        }
+                        document.getElementById("imgEncontrada").src = "/Source/check.png";
+                        document.getElementById('imgEncontrada').style.display = "block";
+                        document.getElementById('btnCadastro').disabled = false;
+                    }
+                    else if (resultado == null || resultado == "" && resultado.length == 0) {
+                        document.getElementById("imgEncontrada").src = "/Source/notfounded.jpg";
+                        document.getElementById('imgEncontrada').style.display = "block";
+                    }
+                });
+            });
+        }
+        else {
+            alert("Preencha todos os campos!");
+        }
+
+        
+    }
+
+    function addImg() {
+        if (document.getElementById('txtLongitude').value != "") {
+            document.getElementById('imgEncontrada').style.display = "block";
+        }
+        else {
+
+        }
+    }
+</script>

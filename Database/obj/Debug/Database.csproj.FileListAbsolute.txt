@@ -1,0 +1,12 @@
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\reparoProject\mapChallenge\Database\bin\Debug\Database.dll
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\reparoProject\mapChallenge\Database\bin\Debug\Database.pdb
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\reparoProject\mapChallenge\Database\obj\Debug\Database.csproj.AssemblyReference.cache
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\reparoProject\mapChallenge\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\reparoProject\mapChallenge\Database\obj\Debug\Database.dll
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\reparoProject\mapChallenge\Database\obj\Debug\Database.pdb
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\mapChallenge\Database\bin\Debug\Database.dll
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\mapChallenge\Database\bin\Debug\Database.pdb
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\mapChallenge\Database\obj\Debug\Database.csproj.AssemblyReference.cache
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\mapChallenge\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\mapChallenge\Database\obj\Debug\Database.dll
+C:\oneDrive\OneDrive - Fatec Centro Paula Souza\Documents\Projetos\mapChallenge\Database\obj\Debug\Database.pdb

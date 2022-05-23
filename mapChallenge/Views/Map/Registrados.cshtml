@@ -1,0 +1,35 @@
+﻿@{
+    List<Business.Local> locais = ViewBag.Locais;
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<a href="/mapa" class="btn btn-primary pull-right" style="background-color: #90dfaa; font-size: 15px; color: white; border-color: #90dfaa; ">Acessar mapa</a>
+<br />
+<br />
+<br />
+<a href="/mapa/registrar" class="btn btn-primary" style="background-color: #90dfaa; font-size: 15px; color: white; border-color: #90dfaa;">Adicionar localização à lista</a>
+<br />
+<br />
+<br />
+<h1>Meus Locais</h1>
+
+<br />
+<br />
+<br />
+<table class="table">
+    <tr>
+        <td><b>ID da localização</b></td>
+        <td><b>Nome do local</b></td>
+        <td><b>Latitude</b></td>
+        <td><b>Longitude</b></td>
+    </tr>
+    @foreach (var local in locais)
+    {
+        <tr>
+            <td>@local.id</td>
+            <td>@local.nomeLocal</td>
+            <td>@local.latitude</td>
+            <td>@local.longitude</td>
+        </tr>
+    }
+</table>
